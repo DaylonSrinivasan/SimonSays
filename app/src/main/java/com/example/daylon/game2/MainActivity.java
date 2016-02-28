@@ -1,5 +1,6 @@
 package com.example.daylon.game2;
 
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
@@ -367,7 +368,10 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO
+                Intent i = new Intent(MainActivity.this, SubmitScore.class);
+                i.putExtra("score", level);
+                startActivity(i);
+                finish();
             }
         });
 

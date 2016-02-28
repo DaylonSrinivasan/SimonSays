@@ -11,7 +11,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 public class MenuScreen extends AppCompatActivity {
 
@@ -24,18 +27,8 @@ public class MenuScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_screen);
 
-        animation = (ImageView)findViewById(R.id.animation);
         setButtonListeners();
-        images = new int[30];
-        images[0]=R.drawable.p1;
-        images[1]=R.drawable.p2;
-        images[2]=R.drawable.p3;
-        images[3]=R.drawable.p4;
-        images[4]=R.drawable.p5;
-
         Firebase.setAndroidContext(this);
-
-        //Firebase myFirebaseRef = new
 
 
     }
@@ -81,6 +74,13 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MenuScreen.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+        scoreboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MenuScreen.this, leaderboard.class);
                 startActivity(i);
             }
         });

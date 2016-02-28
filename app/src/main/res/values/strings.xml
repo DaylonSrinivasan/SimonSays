@@ -5,4 +5,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_menu_screen">MenuScreen</string>
     <string name="title_activity_submit_score">SubmitScore</string>
+    <string name="title_activity_scoreboard">scoreboard</string>
 </resources>

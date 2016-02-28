@@ -102,7 +102,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:background="#00ff08" />
 
     <Button
@@ -112,7 +112,7 @@
         android:id="@+id/quit"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:background="#00ff00" />
 
     <Button
@@ -123,7 +123,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:background="#00ff00" />
 
 </RelativeLayout>
