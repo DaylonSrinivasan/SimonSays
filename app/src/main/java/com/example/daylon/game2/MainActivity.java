@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Random random = new Random();
 
     boolean playable = true;
+    MediaPlayer mp;
 
     int level = 1; // how many in answer
     int lives = 3; // how many errors allowed

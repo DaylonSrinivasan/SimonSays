@@ -2,6 +2,7 @@ package com.example.daylon.game2;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,11 +23,21 @@ public class MenuScreen extends AppCompatActivity {
     ImageButton scoreboard;
     ImageView animation;
     int [] images;
+    MediaPlayer mp;
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        mp.start();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_screen);
 
+        mp = MediaPlayer.create(this, R.raw.incidental_music);
+        mp.setLooping(true);
+        mp.start();
         setButtonListeners();
         Firebase.setAndroidContext(this);
 
@@ -74,6 +85,7 @@ public class MenuScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MenuScreen.this, MainActivity.class);
+                mp.pause();
                 startActivity(i);
             }
         });
