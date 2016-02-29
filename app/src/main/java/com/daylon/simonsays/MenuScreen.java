@@ -1,9 +1,7 @@
-package com.example.daylon.game2;
+package com.daylon.simonsays;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,10 +10,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+import com.daylon.simonsays.R;
 
 public class MenuScreen extends AppCompatActivity {
 
@@ -39,23 +34,8 @@ public class MenuScreen extends AppCompatActivity {
         mp.setLooping(true);
         mp.start();
         setButtonListeners();
-        Firebase.setAndroidContext(this);
-
-
     }
 
-    /*private void animate(){
-        new CountDownTimer(3000, 1000){
-
-            int i = 0;
-            @Override
-            public void onTick(long millis){
-                animation.setBackground(images[0]);
-            }
-            @Override
-            public void onFinish(){}
-        }.start();
-    }*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

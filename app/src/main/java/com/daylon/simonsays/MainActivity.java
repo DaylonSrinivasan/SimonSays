@@ -1,4 +1,4 @@
-package com.example.daylon.game2;
+package com.daylon.simonsays;
 
 import android.content.Intent;
 import android.media.AudioManager;
@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.daylon.simonsays.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     Random random = new Random();
 
     boolean playable = true;
-    MediaPlayer mp;
-
     int level = 1; // how many in answer
     int lives = 3; // how many errors allowed
     TextView curr_level_text;

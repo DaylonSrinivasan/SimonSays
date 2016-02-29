@@ -1,4 +1,4 @@
-package com.example.daylon.game2;
+package com.daylon.simonsays;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.daylon.simonsays.R;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;

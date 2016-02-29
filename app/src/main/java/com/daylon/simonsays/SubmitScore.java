@@ -1,18 +1,16 @@
-package com.example.daylon.game2;
+package com.daylon.simonsays;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
-import com.firebase.client.DataSnapshot;
+import com.daylon.simonsays.R;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 
 public class SubmitScore extends AppCompatActivity {
 
@@ -20,6 +18,7 @@ public class SubmitScore extends AppCompatActivity {
     EditText name;
     EditText scoretext;
     Firebase ref;
+    TextView error;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,14 +29,19 @@ public class SubmitScore extends AppCompatActivity {
         submit = (ImageButton) findViewById(R.id.submit);
         name = (EditText) findViewById(R.id.name);
         scoretext = (EditText) findViewById(R.id.scoretext);
-        scoretext.setText("Score: " + (int)getIntent().getExtras().get("score"));
+        error = (TextView) findViewById(R.id.error);
+        scoretext.setText("Score: " + getIntent().getIntExtra("score", 0));
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                UserScore u = new UserScore(name.getText().toString(), (int)getIntent().getExtras().get("score"));
-                ref.push().setValue(u);
-                finish();
+                if(name.getText().toString().length()<14) {
+                    UserScore u = new UserScore(name.getText().toString(), (int) getIntent().getExtras().get("score"));
+                    ref.push().setValue(u);
+                    finish();
+                }
+                else{
+                    error.setText("Name too long! Shorten and try again!");
+                }
             }
         });
 

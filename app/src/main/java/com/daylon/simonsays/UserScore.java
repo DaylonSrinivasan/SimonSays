@@ -1,4 +1,4 @@
-package com.example.daylon.game2;
+package com.daylon.simonsays;
 
 /**
  * Created by Daylon on 2/27/2016.

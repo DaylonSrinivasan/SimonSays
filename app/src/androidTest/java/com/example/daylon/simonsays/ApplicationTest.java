@@ -1,4 +1,4 @@
-package com.example.daylon.game2;
+package com.example.daylon.simonsays;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

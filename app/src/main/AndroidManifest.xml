@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.daylon.game2" >
+    package="com.daylon.simonsays"
+    android:versionCode="3"
+    android:versionName="1.1.1">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="com.daylon.simonsays.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Simon Says!"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
-            android:label="Simon Says!" >
+            android:name="com.daylon.simonsays.MainActivity"
+            android:label="Simon Says!"
+            android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".MenuScreen"
-            android:label="Simon Says!" >
+            android:name="com.daylon.simonsays.MenuScreen"
+            android:label="Simon Says!"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,12 +28,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SubmitScore"
-            android:label="Simon Says!" >
+            android:name="com.daylon.simonsays.SubmitScore"
+            android:label="Simon Says!"
+            android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".leaderboard"
-            android:label="Simon Says!" >
+            android:name="com.daylon.simonsays.leaderboard"
+            android:label="Simon Says!"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
